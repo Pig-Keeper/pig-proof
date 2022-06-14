@@ -1,7 +1,7 @@
 ## Euclidean Algorithm
 
 ### Statement
-The gcd of two non-negative integers $a$ and $b$ ($a > b$ for simplicity) will be equal to the gcd of $b$ and $a \bmod b$ (Modulo) i.e. $gcd(a,b) = gcd(b,a \bmod b)$
+The gcd of two non-negative integers $a$ and $b$ ($a >= b$ for simplicity) will be equal to the gcd of $b$ and $a \bmod b$ (Modulo) i.e. $$gcd(a,b) = gcd(b,a \bmod b)$$
 
 ### Proof Of Concept
 
@@ -29,9 +29,9 @@ Both $m$ and $n$ should be an integer and equation becomes
 
 $$ m = q.n + r/d $$
 
-For m to be an integer, $ r / d $ should also be an integer, which means $d$ must divided $r$ completely.
+For m to be an integer, $ r / d $ should also be an integer, which means $d$ must divide $r$ completely.
 
-This means d is also the gcd of $b$ and $r$, $gcd(a,b) = gcd(b, r)$ and that can be written $gcd(a,b) = gcd(b, a \bmod b) $
+This means $d$ is also the gcd of $b$ and $r$, $gcd(a,b) = gcd(b, r)$ and that can be written $gcd(a,b) = gcd(b, a \bmod b) $
 
 
 ### Finding GCD
@@ -50,7 +50,11 @@ $$gcd(rN, rM) = gcd(rM, rN \bmod rM) = gcd(rM, 0) = rM $$
 
 From this $$ gcd(a, b) = gcd(b , r) = gcd(r, r1)...... gcd(rN, rM)$$
 
+we can say
+
 $$gcd(a,b) = gcd(rM, 0) = rM$$
+
+When the second parameters turns zero the first will be gcd of given number a and b. 
 
 ### Code
 
@@ -58,6 +62,11 @@ $$gcd(a,b) = gcd(rM, 0) = rM$$
 function gcd(a , b) {
     if(b == 0) {
         return a;
+    }
+
+    if(a < b) {
+        // we assume first to be greater than second
+        return gcd(b , a);
     }
 
     return gcd(b, b%a);
