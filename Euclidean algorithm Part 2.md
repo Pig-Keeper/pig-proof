@@ -1,7 +1,7 @@
 ## Euclidean Algorithm
 
 ### Statement
-The gcd of two non-negative integers $a$ and $b$ ($a > b$ for simplicity) will be equal to the gcd of $b$ and $a \% b$(Modulo) i.e. $ gcd(a,b) = gcd(b,a \% b) $
+The gcd of two non-negative integers $a$ and $b$ ($a > b$ for simplicity) will be equal to the gcd of $b$ and $a \% b$ (Modulo) i.e. $gcd(a,b) = gcd(b,a \% b)$
 
 ### Proof Of Concept
 
@@ -34,7 +34,8 @@ For m to be an integer, $ r / d $ should also be an integer, which means $d$ mus
 This means d is also the gcd of $b$ and $r$, $gcd(a,b) = gcd(b, r)$ and that can be written $gcd(a,b) = gcd(b, a \% b) $
 
 
-#### Finding GCD
+### Finding GCD
+GCD of a and b can be written: 
 $$ gcd(a, b) = gcd(b , r) = gcd(r, r1)...... gcd(rN, rM)$$
 
 where $ r = a \% b $ and $ r1 = b \% r $ and so on...
@@ -51,7 +52,7 @@ From this $$ gcd(a, b) = gcd(b , r) = gcd(r, r1)...... gcd(rN, rM)$$
 
 $$gcd(a,b) = gcd(rM, 0) = rM$$
 
-#### Code
+### Code
 
 ```
 function gcd(a , b) {
