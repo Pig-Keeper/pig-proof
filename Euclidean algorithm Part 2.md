@@ -1,7 +1,7 @@
 ## Euclidean Algorithm
 
 ### Statement
-The gcd of two non-negative integers $a$ and $b$ ($a > b$ for simplicity) will be equal to the gcd of $b$ and $a \% b$ (Modulo) i.e. $gcd(a,b) = gcd(b,a \% b)$
+The gcd of two non-negative integers $a$ and $b$ ($a > b$ for simplicity) will be equal to the gcd of $b$ and $a \bmod b$ (Modulo) i.e. $gcd(a,b) = gcd(b,a \bmod b)$
 
 ### Proof Of Concept
 
@@ -31,22 +31,22 @@ $$ m = q.n + r/d $$
 
 For m to be an integer, $ r / d $ should also be an integer, which means $d$ must divided $r$ completely.
 
-This means d is also the gcd of $b$ and $r$, $gcd(a,b) = gcd(b, r)$ and that can be written $gcd(a,b) = gcd(b, a \% b) $
+This means d is also the gcd of $b$ and $r$, $gcd(a,b) = gcd(b, r)$ and that can be written $gcd(a,b) = gcd(b, a \bmod b) $
 
 
 ### Finding GCD
 GCD of a and b can be written: 
 $$ gcd(a, b) = gcd(b , r) = gcd(r, r1)...... gcd(rN, rM)$$
 
-where $ r = a \% b $ and $ r1 = b \% r $ and so on...
+where $ r = a \bmod b $ and $ r1 = b \bmod r $ and so on...
 
-Now let say $rM$ completely divides $rN$ i.e. $rN \% rM = 0$
+Now let say $rM$ completely divides $rN$ i.e. $rN \bmod rM = 0$
 
 $$ rN = z.rM $$ 
 
 where $z$ is some positive integer. At this point we can say $rM$ will be the gcd of $rN$ and $rM$ i.e. 
 
-$$gcd(rN, rM) = gcd(rM, rN \% rM) = gcd(rM, 0) = rM $$
+$$gcd(rN, rM) = gcd(rM, rN \bmod rM) = gcd(rM, 0) = rM $$
 
 From this $$ gcd(a, b) = gcd(b , r) = gcd(r, r1)...... gcd(rN, rM)$$
 
